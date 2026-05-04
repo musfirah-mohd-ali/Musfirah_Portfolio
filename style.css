@@ -1,454 +1,261 @@
-/* ===========================
-   1. VARIABLES & RESET
-   =========================== */
+/* 1. BRAND COLORS & VARIABLES */
 :root {
-    /* Color Palette derived from the mockup */
-    --hero-bg-top: #b5d5c5;      /* Smoky Green-Grey */
-    --hero-bg-bottom: #97bca9;   /* Deeper Teal-Green */
-    
-    --card-dark-green: #2d4a3e; /* Crime Show Green */
-    --card-light-green: #6d8e7f;
-    --card-light-pink: #fce4ec; /* Kpop/Fantasy Pink */
-    --accent-pink: #f06292;
-    
-    --text-main: #333333;
-    --text-on-dark: #ffffff;
-    --text-nav: #6d8e7f;
-
-    --glass-nav: rgba(255, 255, 255, 0.7);
-    --glass-modal: rgba(255, 255, 255, 0.95);
-    
-    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, professional */
+    --bg: #fffdf6;      /* Resume Cream[cite: 1] */
+    --text: #28221d;    /* Resume Charcoal[cite: 1] */
+    --accent: #952f14;  /* Resume Brick Red[cite: 1] */
+    --neutral: #dbd3c9; /* Resume Sand[cite: 1] */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* 2. CORE SETUP */
 html {
-    scroll-behavior: smooth; /* Nice scrolling between sections */
-    font-family: var(--font-main);
-    color: var(--text-main);
-    background-color: #ffffff; /* Default background */
+    scroll-behavior: smooth;
 }
 
 body {
-    overflow-x: hidden; /* Prevent horizontal scroll issues */
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
 }
 
-/* ===========================
-   2. NAVIGATION (Glassmorphism)
-   =========================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* 3. NAVIGATION - Fixed Alignment */
 nav {
-    position: sticky;
+    padding: 0;
+    position: fixed;
     top: 0;
     width: 100%;
-    height: 80px;
-    background-color: var(--glass-nav);
-    backdrop-filter: blur(10px); /* The blur effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    z-index: 1000; /* Stays on top of everything */
-    display: flex;
-    align-items: center;
+    background: rgba(255, 253, 246, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(219, 211, 201, 0.5);
 }
 
-.nav-container {
-    width: 90%;
-    max-width: 1400px;
+.nav-content {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 5%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Vertical alignment fix */
+    height: 80px;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--card-dark-green);
-    letter-spacing: 1px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-nav);
-    margin-left: 30px;
     font-weight: 600;
-    font-size: 14px;
-    transition: color 0.3s ease;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--accent-pink);
-}
-
-/* ===========================
-   3. HERO SECTION
-   =========================== */
-.hero {
-    position: relative;
-    width: 100%;
-    min-height: 80vh; /* Adjust height as needed */
-    /* Complex, hazy gradient (Frutigo Aero vibe) */
-    background: linear-gradient(135deg, var(--hero-bg-top) 0%, #c5e1d3 30%, #e0f2f1 60%, var(--hero-bg-bottom) 100%);
-    padding: 100px 5%;
-    display: flex;
-    align-items: center;
-}
-
-.hero-wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Text left, illustration right */
-    gap: 50px;
-    align-items: center;
-}
-
-.hero-text h1 {
-    font-size: 48px;
-    color: var(--card-dark-green);
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 40px;
-    max-width: 500px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: var(--card-dark-green);
-    color: white;
+.links a {
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: var(--text);
+    margin-left: 35px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
 }
 
-.cta-button:hover {
-    background-color: #3a5f4f;
-    transform: translateY(-2px);
+.links a:hover {
+    color: var(--accent);
 }
 
-/* Placeholder for your actual illustration */
-.hero-illustration {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 4. HERO SECTION */
+.hero {
+    padding: 25vh 0 15vh;
 }
 
-.illustration-placeholder {
-    width: 100%;
-    height: 400px;
-    background-color: rgba(255,255,255,0.3); /* Translucent box */
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--card-dark-green);
-    border: 2px dashed var(--card-dark-green);
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    margin: 10px 0 25px 0;
+    font-weight: 700;
 }
 
-/* ===========================
-   4. DECORATIVE ELEMENTS
-   =========================== */
-.line-art {
-    position: absolute;
-    pointer-events: none; /* User can click through it */
-    opacity: 0.3;
+.hero-tagline {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
 }
 
-.decorative-lines-hero {
-    top: 10%;
-    right: 5%;
-    width: 300px;
-    height: 300px;
-    /* You would use the exported SVG/PNG line art as a background-image here */
-    border: 1px solid var(--accent-pink); /* Placeholder line */
+.hero-description {
+    max-width: 600px;
+    font-size: 1.25rem;
+    opacity: 0.8;
 }
 
-/* ===========================
-   5. PROJECTS SECTION (Grid)
-   =========================== */
-.content-area {
-    background-color: #ffffff;
-    padding-bottom: 100px;
+/* 5. SECTION LABELS */
+.section-label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+    display: block;
+    opacity: 0.6;
 }
 
-.projects-section {
-    padding: 80px 5%;
+/* 6. PROJECTS SECTION */
+.project-section {
+    background-color: var(--neutral);
+    padding: 120px 0;
 }
 
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 28px;
-    color: var(--card-dark-green);
-    margin-bottom: 50px;
-    position: relative;
-    display: inline-block;
-}
-
-/* Subtitle underline seen in mockup */
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-pink);
-}
-
-.projects-grid {
+.project-grid {
     display: grid;
-    /* Responsive grid: min 280px wide cards, as many as fit */
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
 .project-card {
-    height: 380px; /* Matching the mockup's aspect ratio */
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    background: var(--bg);
+    padding: 50px 40px;
+    border-radius: 4px;
+    transition: var(--transition);
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 30px 60px rgba(40, 34, 29, 0.1);
 }
 
-/* Card Image/Icon Area */
-.card-image-area {
-    flex: 1; /* Takes remaining space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.project-year {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
 }
 
-.project-icon {
-    width: 80px;
-    height: 80px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin: 15px 0;
 }
 
-/* Card Icons (Placeholders until you add real SVGs) */
-.icon-flower { border: 2px solid white; border-radius: 50%; opacity: 0.7;} /* Example flower */
-.icon-generic { border: 2px solid white; border-radius: 10px; opacity: 0.5;}
-.icon-star { border: 2px solid white; border-radius: 5px; opacity: 0.8;}
-
-/* Card Details Area */
-.card-details {
-    height: 140px; /* Fixed height for text area */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-details h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.card-details p {
-    font-size: 14px;
-    line-height: 1.4;
-    opacity: 0.9;
-}
-
-.card-details .subtitle {
-    font-size: 12px;
+.tags span {
+    display: inline-block;
+    border: 1px solid var(--neutral);
+    padding: 6px 16px;
+    margin: 20px 10px 0 0;
+    font-size: 0.65rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+}
+
+/* 7. EXPERIENCE SECTION */
+.experience-section {
+    padding: 120px 0;
+}
+
+.exp-item {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.exp-date {
+    font-weight: 700;
+    color: var(--accent); /* Brick Red for dates[cite: 1] */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.exp-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.exp-content h4 {
+    margin: 5px 0 15px;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.exp-content ul {
+    padding-left: 20px;
+}
+
+.exp-content li {
     margin-bottom: 10px;
 }
 
-.card-action {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: var(--accent-pink);
-    text-align: right;
+/* 8. ABOUT SECTION */
+.about-section {
+    padding: 120px 0;
+    border-top: 1px solid var(--neutral);
 }
 
-/* Card Color Variations (Matching the Mockup) */
-.card-dark-green {
-    background-color: var(--card-dark-green);
-    color: var(--text-on-dark);
+.large-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    max-width: 900px;
 }
 
-.card-light-green {
-    background-color: var(--card-light-green);
-    color: var(--text-on-dark);
-}
-
-.card-light-pink {
-    background-color: var(--card-light-pink);
-    color: var(--text-main);
-}
-.card-light-pink .card-details p {
-    color: #555;
-}
-
-/* ===========================
-   6. FOOTER
-   =========================== */
+/* 9. FOOTER / CONTACT */
 footer {
-    width: 100%;
-    padding: 40px 5%;
-    background-color: var(--card-dark-green);
-    color: var(--text-on-dark);
+    background-color: var(--text); /* Charcoal[cite: 1] */
+    color: var(--bg); /* Cream[cite: 1] */
+    padding: 100px 0 40px;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
+footer .section-label { color: var(--bg); opacity: 0.4; }
+
+.footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 80px;
 }
 
-.social-links a {
+.footer-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    max-width: 500px;
+}
+
+.email-link {
+    color: var(--accent); /* Brick Red[cite: 1] */
+    font-size: 1.5rem;
     text-decoration: none;
-    color: var(--text-on-dark);
-    margin-right: 20px;
-    font-size: 14px;
-    opacity: 0.8;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent);
 }
 
-.social-links a:hover {
-    opacity: 1;
-    color: var(--accent-pink);
+.footer-socials a {
+    display: block;
+    color: var(--bg);
+    text-decoration: none;
+    margin-bottom: 15px;
 }
 
-.copyright {
-    font-size: 12px;
-    opacity: 0.6;
-}
-
-/* ===========================
-   7. MODAL (Pop-up Window)
-   =========================== */
-.modal-overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semitransparent background */
-    z-index: 2000; /* Sits on top of Nav */
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.modal-window {
-    background-color: var(--glass-modal);
-    width: 90%;
-    max-width: 800px;
-    max-height: 90vh; /* Prevents being taller than the screen */
-    border-radius: 20px;
-    padding: 40px;
-    position: relative;
-    overflow-y: auto; /* Adds scrolling INSIDE the modal if content is long */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 30px;
-    color: #aaa;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close-modal:hover {
-    color: var(--accent-pink);
-}
-
-/* Modal Content Injected Styling */
-#modal-content-injected h2 {
-    color: var(--card-dark-green);
-    margin-bottom: 5px;
-}
-
-.modal-subtitle {
-    font-size: 14px;
+.footer-bottom {
+    border-top: 1px solid rgba(219, 211, 201, 0.1);
+    padding-top: 40px;
+    font-size: 0.75rem;
+    opacity: 0.5;
     text-transform: uppercase;
-    color: var(--text-nav);
-    letter-spacing: 1px;
-    margin-bottom: 25px;
 }
 
-.modal-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.modal-image-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Placeholder box showing if no images are loaded yet */
-.image-placeholder-box {
-    width: 100%;
-    height: 150px;
-    background-color: #eee;
-    border-radius: 10px;
-    display: none; /* Only shows when img errors */
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    color: #888;
-}
-
-.modal-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #444;
-}
-
-/* ===========================
-   8. RESPONSIVE (Mobile)
-   =========================== */
+/* 10. MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    .hero-wrapper {
-        grid-template-columns: 1fr; /* Stack text and illustration vertically */
-        text-align: center;
-    }
-    
-    .hero-text p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .nav-links {
-        display: none; /* A real site would need a hamburger menu here */
-    }
+    .exp-item { grid-template-columns: 1fr; gap: 10px; }
+    .nav-content .links { display: none; } /* Could add a hamburger menu later */
+    h1 { font-size: 3rem; }
+    .large-text { font-size: 1.6rem; }
 }

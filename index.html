@@ -3,233 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musfirah | Portfolio</title>
-    <!-- We link the stylesheet here -->
+    <title>Musfirah Ali | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Optional: Add a favicon here -->
+    <!-- Professional fonts: Serif for headings, Sans-serif for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ===========================
-        NAVIGATION BAR (Glassmorphism)
-    =========================== -->
     <nav>
-        <div class="nav-container">
-            <div class="logo">MUSFIRAH</div>
-            <div class="nav-links">
-                <a href="#projects" class="active">PROJECTS</a>
-                <a href="#about">ABOUT ME</a>
-                <a href="resume.pdf" target="_blank">RESUME</a>
-                <a href="#contact">CONTACT</a>
+        <div class="nav-content">
+            <span class="logo">M.ALI</span>
+            <div class="links">
+                <a href="#home">Home</a>
+                <a href="#work">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- ===========================
-        HERO SECTION (Green Gradient)
-    =========================== -->
-    <section class="hero">
-        <div class="hero-wrapper">
-            <div class="hero-text">
-                <h1>Hi, I’m Musfirah.</h1>
-                <p>[A space for user to input brief intro. Share your passion for C#, Unity, and immersive experiences.]</p>
-                <a href="#projects" class="cta-button">VIEW MY WORK</a>
+    <!-- Header / Hero Section -->
+    <header id="home" class="hero">
+        <div class="container">
+            <p class="hero-tagline">Immersive Media Student @ Ngee Ann Poly[cite: 1]</p>
+            <h1 class="fade-in">Musfirah Binte Mohamed Ali</h1>
+            <div class="hero-description">
+                Focused on <strong>UX/UI Design</strong> and <strong>Front-End Development</strong> to create user-centric digital experiences.[cite: 1]
             </div>
-            
-            <!-- This container holds the illustration seen in the mockup -->
-            <div class="hero-illustration">
-                <div class="illustration-placeholder">
-                    <!-- The specific illustration (the woman with floating UI windows) 
-                        should be placed here as an <img src="illustration.png"> 
-                        once you export it from Figma or design it. -->
-                    <span>[Illustration Area]</span>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <main id="work" class="project-section">
+        <div class="container">
+            <span class="section-label">Selected Projects[cite: 1]</span>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="project-year">2026[cite: 1]</span>
+                    <h3>Forget Me Not</h3>
+                    <p>A VR simulation for dementia awareness using C# and Unity.[cite: 1]</p>
+                    <div class="tags"><span>VR Development</span><span>UX Research</span></div>
+                </div>
+                <div class="project-card">
+                    <span class="project-year">2025[cite: 1]</span>
+                    <h3>Kiasu Kouriers</h3>
+                    <p>An educational Unity game teaching traffic safety laws.[cite: 1]</p>
+                    <div class="tags"><span>Gamification</span><span>C# Programming</span></div>
                 </div>
             </div>
         </div>
-        
-        <!-- Subtle decorative line art seen in the mockup background -->
-        <div class="line-art decorative-lines-hero"></div>
-    </section>
-
-    <!-- ===========================
-         MAIN CONTENT (White Background)
-         =========================== -->
-    <main class="content-area">
-        <section id="projects" class="projects-section">
-            <div class="section-container">
-                <h2 class="section-title">PROJECTS</h2>
-                
-                <div class="projects-grid">
-                    <!-- Project Card 1 (Forget-Me-Not) -->
-                    <!-- The 'onclick' connects it to the modal script below -->
-                    <div class="project-card card-dark-green" onclick="openModal('forget-me-not')">
-                        <div class="card-image-area">
-                            <!-- Small decorative icon/logo area (e.g., the flower) -->
-                            <div class="project-icon icon-flower"></div>
-                        </div>
-                        <div class="card-details">
-                            <h3>forget-me-not</h3>
-                            <p class="subtitle">A CYBER-DECAY MYSTERY</p>
-                            <span class="card-action">VIEW PROJECT DETAILS</span>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 2 (Placeholder) -->
-                    <div class="project-card card-light-green" onclick="openModal('project2')">
-                        <div class="card-image-area">
-                            <div class="project-icon icon-generic"></div>
-                        </div>
-                        <div class="card-details">
-                            <h3>[PROJECT TITLE 2]</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fantasy tech.</p>
-                            <span class="card-action">VIEW PROJECT DETAILS</span>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 3 (Placeholder) -->
-                    <div class="project-card card-dark-green" onclick="openModal('project3')">
-                        <div class="card-image-area">
-                            <div class="project-icon icon-generic"></div>
-                        </div>
-                        <div class="card-details">
-                            <h3>[PROJECT TITLE 3]</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <span class="card-action">VIEW PROJECT DETAILS</span>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 4 (Placeholder) -->
-                    <div class="project-card card-light-pink" onclick="openModal('project4')">
-                        <div class="card-image-area">
-                            <div class="project-icon icon-star"></div>
-                        </div>
-                        <div class="card-details">
-                            <h3>[PROJECT TITLE 4]</h3>
-                            <p>Lorem ipsum dolor sit amet, kpop stage design.</p>
-                            <span class="card-action">VIEW PROJECT DETAILS</span>
-                        </div>
-                    </div>
-                </div> <!-- End Projects Grid -->
-            </div>
-        </section>
-
-        <!-- Placeholder for ABOUT ME section (from the mockup's right side panel) -->
-        <section id="about" class="about-panel">
-            <!-- This would contain the bio, photo, and skill icons -->
-        </section>
     </main>
 
-    <!-- ===========================
-         FOOTER (Dark Green)
-         =========================== -->
-    <footer>
-        <div class="footer-container">
-            <div class="social-links">
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">GitHub</a>
-                <a href="#">email</a>
+    <!-- Work Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <span class="section-label">Professional Path[cite: 1]</span>
+            
+            <div class="exp-item">
+                <div class="exp-date">Aug 2024 - Feb 2026[cite: 1]</div>
+                <div class="exp-content">
+                    <h3>Boost Juice Bar</h3>
+                    <h4>Service Worker[cite: 1]</h4>
+                    <ul>
+                        <li>Manage high-volume customer flow and POS operations.[cite: 1]</li>
+                        <li>Coordinate team tasks in a fast-paced retail environment.[cite: 1]</li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">© [YEAR] MUSFIRAH</div>
+
+            <div class="exp-item">
+                <div class="exp-date">Apr 2020 - Sep 2023[cite: 1]</div>
+                <div class="exp-content">
+                    <h3>National University of Singapore</h3>
+                    <h4>IT Application Developer Intern[cite: 1]</h4>
+                    <ul>
+                        <li>Supported digital content creation, graphics, and UX/UI design.[cite: 1]</li>
+                        <li>Performed User Acceptance Testing (UAT) for project developments.[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <span class="section-label">Profile[cite: 1]</span>
+            <p class="large-text">
+                I am an experienced retail and food & beverage worker who has maintained part-time employment while studying.[cite: 1] 
+                My focus is on bridging my background with <strong>immersive media</strong> to design more empathetic digital interfaces.[cite: 1]
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact">
+        <div class="container">
+            <span class="section-label">Get In Touch</span>
+            <div class="footer-content">
+                <div class="footer-cta">
+                    <p class="footer-text">Interested in collaborating or just want to say hi?</p>
+                    <a href="mailto:musfirahali15@gmail.com" class="email-link">musfirahali15@gmail.com</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/musfirah-mohamed-ali-264632252">LinkedIn</a>
+                    <a href="https://github.com/musfirah-mohd-ali">GitHub</a>
+                    <p class="phone">+65 8899 1741</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Musfirah Ali. Immersive Media Student at Ngee Ann Poly.[cite: 1]</p>
+            </div>
         </div>
     </footer>
-
-    <!-- ===========================
-         PROJECT MODAL (Pop-up Overlay)
-         =========================== -->
-    <div id="projectModal" class="modal-overlay">
-        <div class="modal-window">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div id="modal-content-injected">
-                <!-- JavaScript will inject content here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- ===========================
-         JAVASCRIPT (For Modal Logic)
-         =========================== -->
-    <script>
-        // 1. Data Structure holding project details (You edit this!)
-        const projectsData = {
-            'forget-me-not': {
-                title: 'Forget-Me-Not',
-                subtitle: 'A CYBER-DECAY MYSTERY',
-                description: 'A deeply narrative-driven simulation detailing systems of memory loss and cybernetic decay. This project explores themes of crime and fantasy tech in a cohesive interactive experience.',
-                images: [
-                    'path/to/forget_me_not_screenshot1.png', // Replace with real paths
-                    'path/to/forget_me_not_screenshot2.png',
-                    'path/to/concept_art.png'
-                ]
-            },
-            'project2': {
-                title: '[Project Title 2]',
-                subtitle: 'Fantasy Tech Exploration',
-                description: 'Detailed description of Project 2 goes here. Focus on the C# systems or Unity implementation.',
-                images: ['path/to/p2_image1.png']
-            },
-            'project3': {
-                title: '[Project Title 3]',
-                subtitle: 'Crime Show Inspired Mechanics',
-                description: 'Description for Project 3.',
-                images: ['path/to/p3_image1.png']
-            },
-            'project4': {
-                title: '[Project Title 4]',
-                subtitle: 'Kpop Aesthetic Design',
-                description: 'Description for Project 4, focusing on visual aesthetics.',
-                images: ['path/to/p4_image1.png']
-            }
-        };
-
-        // 2. Function to open the modal and populate content
-        function openModal(projectId) {
-            const data = projectsData[projectId];
-            if (!data) return; // Error safety
-
-            const modalBody = document.getElementById('modal-content-injected');
-            
-            // Generate the image HTML string
-            const imagesHtml = data.images.map(img => `
-                <div class="modal-image-container">
-                    <!-- If you don't have images yet, this placeholder shows -->
-                    <img src="${img}" alt="${data.title} Screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="image-placeholder-box"><span>Screenshot of ${data.title}</span></div>
-                </div>
-            `).join('');
-
-            // Inject the complete content structure
-            modalBody.innerHTML = `
-                <h2>${data.title}</h2>
-                <p class="modal-subtitle">${data.subtitle}</p>
-                <div class="modal-gallery">
-                    ${imagesHtml}
-                </div>
-                <div class="modal-description">
-                    <p>${data.description}</p>
-                </div>
-            `;
-
-            // Display the modal
-            document.getElementById('projectModal').style.display = 'flex';
-            // Prevent scrolling on the main page while modal is open
-            document.body.style.overflow = 'hidden'; 
-        }
-
-        // 3. Function to close the modal
-        function closeModal() {
-            document.getElementById('projectModal').style.display = 'none';
-            // Restore scrolling
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal if user clicks anywhere outside the white modal window
-        window.onclick = function(event) {
-            const modal = document.getElementById('projectModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
 
 </body>
 </html>
