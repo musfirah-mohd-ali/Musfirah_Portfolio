@@ -336,74 +336,125 @@ footer h2 {
 }
 
 /* 8. MOBILE VIEW TRANSFORMATION */
+/* --- THE ULTIMATE MOBILE TRANSFORMATION --- */
 @media (max-width: 768px) {
     
-    /* Hamburger Menu */
-    .nav-toggle-label {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+    /* 1. Slimmer Nav Bar for Mobile */
+    nav { 
+        height: 65px; 
+        padding: 20px;
+    }
+
+    /* 2. Hamburger Icon Construction */
+    .nav-toggle-label { 
+        display: flex; 
+        align-items: center; 
+        width: 28px; 
+        height: 20px; 
+        cursor: pointer; 
+        z-index: 3000; /* Stays above the menu */
+        position: relative;
     }
 
     .nav-toggle-label span, 
     .nav-toggle-label span::before, 
     .nav-toggle-label span::after {
-        background: var(--text);
-        height: 2px;
-        width: 22px;
-        position: relative;
-        transition: 0.3s;
+        background: var(--text); 
+        height: 2px; 
+        width: 100%; 
+        position: absolute; 
+        transition: all 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     }
 
-    .nav-toggle-label span::before { content: ''; position: absolute; bottom: 7px; }
-    .nav-toggle-label span::after { content: ''; position: absolute; top: 7px; }
+    .nav-toggle-label span::before { content: ''; top: -8px; }
+    .nav-toggle-label span::after { content: ''; top: 8px; }
 
+    /* 3. Full-Screen "App-Style" Overlay Menu */
     .nav-links {
-        position: absolute;
-        top: 80px;
-        left: 0;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden off-screen to the right */
         width: 100%;
+        height: 100vh;
         background: var(--bg);
+        display: flex;
         flex-direction: column;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        z-index: 2000;
+    }
+
+    .nav-links-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
     }
 
     .nav-links a {
-        padding: 25px;
-        border-top: 1px solid rgba(0,0,0,0.03);
-        text-align: center;
-        width: 100%;
-        font-size: 0.9rem;
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem; /* Big, bold links for easy tapping */
+        font-weight: 700;
+        text-transform: capitalize;
+        letter-spacing: 0;
     }
 
+    /* 4. Menu Trigger Logic (The "X" Animation) */
     .nav-toggle:checked ~ .nav-links {
-        max-height: 100vh;
+        right: 0; /* Slides menu into view */
     }
 
-    /* Animate to X */
-    .nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
-    .nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; }
-    .nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; }
-
-    /* Layout Adjustments */
-    h1 {
-        font-size: 2.5rem;
+    .nav-toggle:checked ~ .nav-toggle-label span { 
+        background: transparent; 
     }
 
+    .nav-toggle:checked ~ .nav-toggle-label span::before { 
+        transform: rotate(45deg); 
+        top: 0; 
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span::after { 
+        transform: rotate(-45deg); 
+        top: 0; 
+    }
+
+    /* 5. Mobile Typography & Layout */
+    h1 { 
+        font-size: 2.8rem; /* Prevents long names from breaking onto 4 lines */
+        line-height: 1.1;
+    }
+
+    .hero {
+        padding: 130px 0 60px;
+    }
+
+    .large-text {
+        font-size: 1.8rem;
+    }
+
+    /* 6. Project Cards: Focused & Clean */
     .project-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Force single column */
+        gap: 20px;
     }
 
     .project-card {
-        padding: 30px;
+        padding: 35px 25px;
+        min-height: auto;
     }
 
-    .exp-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
+    .project-card h3 {
+        font-size: 1.8rem;
+    }
+
+    /* 7. Footer Contact Links */
+    .contact-item {
+        font-size: 1.1rem; /* Keeps email/phone from clipping */
+        word-break: break-all;
+    }
+
+    footer h2 {
+        font-size: 1.8rem;
     }
 }
