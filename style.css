@@ -1,4 +1,3 @@
-/* 1. BRAND COLORS & VARIABLES */
 :root {
     --bg: #fffdf6;      /* Resume Cream[cite: 1] */
     --text: #28221d;    /* Resume Charcoal[cite: 1] */
@@ -7,33 +6,22 @@
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* 2. CORE SETUP */
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.7;
     margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
 
-/* 3. NAVIGATION */
+/* NAVIGATION */
 nav {
-    padding: 0;
     position: fixed;
-    top: 0;
-    width: 100%;
+    top: 0; width: 100%;
     background: rgba(255, 253, 246, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -41,287 +29,227 @@ nav {
 }
 
 .nav-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    height: 80px; max-width: 1200px; margin: 0 auto; padding: 0 5%;
 }
 
-.logo {
-    font-weight: 600;
-    letter-spacing: 3px;
-    font-size: 0.9rem;
-}
-
+.logo { font-weight: 600; letter-spacing: 3px; font-size: 0.9rem; }
 .links a {
-    text-decoration: none;
-    color: var(--text);
-    margin-left: 35px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: var(--transition);
+    text-decoration: none; color: var(--text); margin-left: 35px;
+    font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1px; transition: var(--transition);
 }
+.links a:hover { color: var(--accent); }
 
-.links a:hover {
-    color: var(--accent);
-}
-
-/* 4. HERO SECTION */
-.hero {
-    padding: 25vh 0 15vh;
-}
-
+/* HERO */
+.hero { padding: 25vh 0 15vh; }
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 8vw, 5.5rem);
-    line-height: 1.05;
-    margin: 10px 0 25px 0;
-    font-weight: 700;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1; margin: 10px 0 25px;
 }
+.hero-tagline { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+.hero-description { max-width: 650px; font-size: 1.25rem; opacity: 0.8; }
 
-.hero-tagline {
-    color: var(--accent);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-}
-
-.hero-description {
-    max-width: 650px;
-    font-size: 1.25rem;
-    color: #4a4540;
-    margin-top: 30px;
-}
-
-/* 5. SECTION HEADERS */
-.section-label {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 60px;
-    display: block;
-    color: var(--text);
-    opacity: 0.6;
-}
-
-/* 6. PROJECTS SECTION - Updated for stacked Roles */
+/* 6. PROJECTS SECTION - Vertical Fix */
 .project-section {
-    background-color: var(--neutral);
+    background-color: var(--neutral); /* Sand #dbd3c9 */
     padding: 120px 0;
+}
+
+.section-label { 
+    text-transform: uppercase; 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    letter-spacing: 4px; 
+    margin-bottom: 30px; 
+    display: block; 
+    opacity: 0.6; 
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .project-card {
-    background: var(--bg);
-    padding: 50px 40px;
+    background: var(--bg); /* Cream #fffdf6 */
+    padding: 40px;
     border-radius: 4px;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
     transition: var(--transition);
-    border: 1px solid transparent;
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(40, 34, 29, 0.1);
-    border-color: var(--accent);
-}
-
-/* Updated card-header to stack elements vertically */
 .card-header {
     display: flex;
-    flex-direction: column; /* Stacks year and role[cite: 1] */
+    flex-direction: column; /* Forces vertical stacking */
     align-items: flex-start;
-    margin-bottom: 15px;
+    gap: 12px; /* Adds clean breathing room between date and role */
+    margin-bottom: 20px;
 }
 
 .project-year {
-    color: var(--accent); /* Brick Red[cite: 1] */
-    font-size: 0.8rem;
+    color: var(--accent); /* Brick Red #952f14[cite: 1] */
+    font-size: 0.75rem;
     font-weight: 700;
-    margin-bottom: 8px; /* Gap between year and role */
+    letter-spacing: 1px;
+    margin: 0;
 }
 
 .project-role {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text);
-    background-color: var(--neutral); /* Sand[cite: 1] */
-    padding: 4px 10px;
+    letter-spacing: 0.5px;
+    color: var(--text); /* Charcoal #28221d[cite: 1] */
+    background-color: var(--neutral);
+    padding: 6px 10px;
     border-radius: 2px;
+    line-height: 1.4;
     display: inline-block;
 }
 
 .project-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
-    margin: 15px 0;
+    margin: 0 0 15px 0;
     font-weight: 700;
 }
 
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Pushes tags to the bottom of the card */
+}
+
+/* Fixes the tags grid at the bottom */
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 25px;
+    gap: 8px;
 }
 
 .tags span {
     border: 1px solid var(--neutral);
-    padding: 6px 16px;
+    padding: 6px 12px;
     font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
-/* 7. EXPERIENCE SECTION */
-.experience-section {
-    padding: 120px 0;
-}
+/* EXPERIENCE SECTION */
+.experience-section { padding: 120px 0; }
+.exp-item { display: grid; grid-template-columns: 250px 1fr; margin-bottom: 60px; gap: 40px; }
+.exp-date { font-weight: 700; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; }
+.exp-content h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 0; }
+.exp-content h4 { margin: 5px 0 15px; opacity: 0.7; font-weight: 400; }
 
-.exp-item {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    margin-bottom: 70px;
-    gap: 40px;
+/* ABOUT SECTION */
+.about-section { padding: 120px 0; border-top: 1px solid var(--neutral); }
+.about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: center; }
+.about-image img { width: 100%; max-width: 350px; border-radius: 4px; border: 1px solid var(--neutral); }
+.large-text { font-family: 'Playfair Display', serif; font-size: 1.8rem; line-height: 1.4; }
+.btn-resume {
+    display: inline-flex; align-items: center; padding: 15px 30px;
+    background-color: var(--accent); color: var(--bg); text-decoration: none;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;
+    transition: var(--transition); border-radius: 2px;
 }
+.btn-resume:hover { background-color: var(--text); transform: translateY(-3px); }
 
-.exp-date {
-    font-weight: 700;
-    color: var(--accent);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.exp-content h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.9rem;
-    margin: 0;
-}
-
-.exp-content h4 {
-    margin: 8px 0 20px 0;
-    color: #666;
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-
-.exp-content ul {
-    margin: 0;
-    padding-left: 18px;
-    list-style-type: square;
-}
-
-.exp-content li {
-    margin-bottom: 12px;
-    max-width: 700px;
-    color: #333;
-}
-
-/* 8. ABOUT SECTION */
-.about-section {
-    padding: 120px 0 180px;
-    border-top: 1px solid var(--neutral);
-}
-
-.large-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    max-width: 900px;
-    line-height: 1.3;
-    color: var(--text);
-}
-
-/* 9. FOOTER / CONTACT SECTION */
+/* FOOTER */
 footer {
-    background-color: var(--text);
-    color: var(--bg);
-    padding: 100px 0 40px;
+    background-color: var(--text); /* Charcoal */
+    color: var(--bg); /* Cream[cite: 1] */
+    padding: 120px 0 60px;
 }
 
-footer .section-label {
-    color: var(--bg);
-    opacity: 0.4;
-    margin-bottom: 40px;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Split between message and links */
+    gap: 80px;
+    margin-bottom: 100px;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 80px;
-}
-
-.footer-text {
+.footer-heading {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    max-width: 500px;
+    font-size: 2.8rem;
     line-height: 1.2;
     margin-bottom: 30px;
+    color: var(--bg);
 }
 
-.email-link {
-    color: var(--accent);
+.big-email-link {
     font-size: 1.5rem;
+    color: var(--accent); /* Brick Red[cite: 1] */
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 2px solid var(--accent);
     transition: var(--transition);
+    border-bottom: 2px solid transparent;
 }
 
-.email-link:hover { opacity: 0.8; }
+.big-email-link:hover {
+    border-bottom: 2px solid var(--accent);
+}
 
-.footer-socials a {
-    display: block;
+/* Side Info Styling */
+.footer-side {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-label {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    margin-bottom: 5px;
+}
+
+.footer-side a, .footer-side p {
     color: var(--bg);
     text-decoration: none;
     font-size: 1.1rem;
-    margin-bottom: 15px;
+    margin: 0;
     transition: var(--transition);
 }
 
-.footer-socials a:hover { color: var(--accent); }
-
-.phone { opacity: 0.6; margin-top: 20px; }
+.footer-side a:hover {
+    color: var(--accent);
+    transform: translateX(5px);
+}
 
 .footer-bottom {
-    border-top: 1px solid rgba(219, 211, 201, 0.1);
+    border-top: 1px solid rgba(219, 211, 201, 0.1); /* Subtle Sand divider[cite: 1] */
     padding-top: 40px;
     font-size: 0.75rem;
-    opacity: 0.5;
+    opacity: 0.4;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* 10. RESPONSIVENESS */
+/* Responsive Fix for Footer */
 @media (max-width: 768px) {
-    .exp-item {
+    .footer-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 60px;
     }
-    
-    .nav-content .links { display: none; }
+    .footer-heading {
+        font-size: 2rem;
+    }
+}
 
+@media (max-width: 992px) {
+    .about-grid, .exp-item { grid-template-columns: 1fr; }
     h1 { font-size: 3rem; }
-
-    .large-text { font-size: 1.6rem; }
-
-    .footer-content { flex-direction: column; }
 }
