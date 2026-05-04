@@ -5,150 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musfirah Ali | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts for the clean, minimalist aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
-        <div class="nav-content">
-            <span class="logo">MUSFIRAH.ALI</span>
-            <div class="links">
-                <a href="#home">Home</a>
-                <a href="#work">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+        <div class="container nav-content">
+            <a href="#home" class="logo">MUSFIRAH.ALI</a>
+            
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+
+            <div class="nav-links">
+                <a href="#home">HOME</a>
+                <a href="#projects">PROJECTS</a>
+                <a href="#experience">EXPERIENCE</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <!-- Header / Hero Section -->
+    <!-- HERO SECTION -->
     <header id="home" class="hero">
         <div class="container">
-            <p class="hero-tagline">Immersive Media student at ngee ann polytechnic</p>
-            <h1 class="fade-in">Musfirah Binte Mohamed Ali</h1>
-            <div class="hero-description">
-                Focused on <strong>UX/UI Design</strong> and <strong>Social Media Marketing and Branding</strong> to create user-centric digital experiences.
-            </div>
+            <p class="hero-label">IMMERSIVE MEDIA STUDENT AT NGEE ANN POLYTECHNIC</p>
+            <h1>Musfirah Binte <br>Mohamed Ali</h1>
+            <p class="hero-description">
+                Focused on <strong>UX/UI Design</strong> and <strong>Social Media Marketing</strong> to create user-centric digital experiences.
+            </p>
         </div>
     </header>
 
-    <!-- Projects Section -->
-    <main id="work" class="project-section">
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="project-section">
         <div class="container">
-            <span class="section-label">Projects</span>
+            <p class="section-label">SELECTED PROJECTS</p>
             <div class="project-grid">
-                <div class="project-card">
-                    <span class="project-year">OCT 2025 - FEB 2026</span>
-                    <span class="project-role">UX Researcher, UX Designer</span>
-                    <h3>Forget Me Not</h3>
-                    <p>VR game that keys into the importance of dementia awareness. Created to promote social good in overlooked communities</p>
-                    <div class="tags"><span>VR Development</span><span>UX Research</span><span>Database Structuring</span></div>
-                </div>
-                <div class="project-card">
-                    <span class="project-year">MAY 2025 - JUN 2025</span>
-                    <span class="project-role">Leader, Game Developer, UX Designer</span>
-                    <h3>Kiasu Kouriers</h3>
-                    <p>A Unity game teaching students to follow traffic laws while also delivering packages.</p>
-                    <div class="tags"><span>C# Programming</span><span>Figma Wireframing</span><span>UX Research</span></div>
-                </div>
-                <div class="project-card">
-                    <span class="project-year">OCT 2024 - FEB 2025</span>
-                    <span class="project-role">Leader, Web Developer, 3D Modeller</span>
-                    <h3>Musli Travels</h3>
-                    <p>A dedicated travel website for users to shop for travel plans and travel essentials.</p>
-                    <div class="tags"><span>3D Modelling</span><span>Project Management</span><span>HTML Programming</span><span>CSS Programming</span></div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Work Experience Section -->
-    <section id="experience" class="experience-section">
-        <div class="container">
-            <span class="section-label">Professional Experience</span>
-            
-            <div class="exp-item">
-                <div class="exp-date">Aug 2024 - Feb 2026</div>
-                <div class="exp-content">
-                    <h3>Boost Juice Bar</h3>
-                    <h4>Service Worker</h4>
-                    <ul>
-                        <li>Manage high-volume customer flow and point-of-sale (POS) financial operations.</li>
-                        <li>Oversee crowd management and coordinate team tasks in a fast-paced retail environment.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-date">Apr 2023 - Sep 2023</div>
-                <div class="exp-content">
-                    <h3>National University of Singapore</h3>
-                    <h4>IT Application Developer Intern</h4>
-                    <ul>
-                        <li>Supported digital content creation including graphics, layout development, and UX/UI design matters.</li>
-                        <li>Performed User Acceptance Testing (UAT) and quality checks for project developments to ensure high standards.</li>
-                        <li>Analysed user requirements to inform project development and design decisions.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <span class="section-label">About Me</span>
-            <div class="about-grid">
-                <!-- Photo Column -->
-                <div class="about-image">
-                    <img src="/images/IMG_0548.JPG" alt="Musfirah Mohamed Ali">
-                </div>
                 
-                <!-- Text & Resume Column -->
-                <div class="about-text-content">
-                    <p class="large-text">
-                        Immersive Media student at Ngee Ann Polytechnic with a passion for UX/UI design and social media marketing. Experienced in digital content creation, graphics, and layout development from internships at the National University of Singapore. Proficient in HTML5, CSS, and Figma, with a focus on creating user-centric digital experiences. 
-                    </p>
-                    <div class="resume-cta">
-                        <a href="https://canva.link/yfnlkf41khp2g6l" target="_blank" class="btn-resume">
-                            View Full Resume <span class="arrow">→</span>
-                        </a>
+                <!-- Project: Forget Me Not -->
+                <div class="project-card">
+                    <div class="card-meta">
+                        <span class="date">OCT 2025 — FEB 2026</span>
+                        <span class="role">UX RESEARCHER • UX DESIGNER</span>
+                    </div>
+                    <h3>Forget Me Not</h3>
+                    <p>A VR simulation designed to build empathy and raise awareness for dementia care through immersive storytelling and system-based interaction.</p>
+                    <div class="tags">
+                        <span>Unity</span>
+                        <span>XR Interaction</span>
+                        <span>C#</span>
                     </div>
                 </div>
+
+                <!-- Project: Kiasu Kouriers -->
+                <div class="project-card">
+                    <div class="card-meta">
+                        <span class="date">MAY 2025 — JUN 2025</span>
+                        <span class="role">LEAD DEVELOPER • UX RESEARCHER • UX DESIGNER</span>
+                    </div>
+                    <h3>Kiasu Kouriers</h3>
+                    <p>A gamified approach to road safety education built in Unity, teaching students traffic laws through active delivery simulation.</p>
+                    <div class="tags">
+                        <span>Unity 3D</span>
+                        <span>UX/UI</span>
+                        <span>Game Design</span>
+                    </div>
+                </div>
+
+                <!-- Project: Musli Travels -->
+                <div class="project-card">
+                    <div class="card-meta">
+                        <span class="date">OCT 2024 — FEB 2025</span>
+                        <span class="role">LEADER • PROGRAMMER • 3D MODELLER</span>
+                    </div>
+                    <h3>Musli Travels</h3>
+                    <p>A travel website for users to shop for travel packages and essentials.</p>
+                    <div class="tags">
+                        <span>3D Modelling</span>
+                        <span>HTML Programming</span>
+                        <span>CSS Programming</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact Section -->
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="exp-section">
+        <div class="container">
+            <p class="section-label">PROFESSIONAL EXPERIENCE</p>
+            
+            <div class="exp-item">
+                <span class="exp-date">AUG 2024 — FEB 2026</span>
+                <div class="exp-content">
+                    <h3>Boost Juice Bar</h3>
+                    <p class="job-title">Service Worker</p>
+                    <ul>
+                        <li>Manage high-volume customer flow and point-of-sale operations.</li>
+                        <li>Oversee crowd management in a fast-paced retail environment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-date">APR 2023 — SEP 2023</span>
+                <div class="exp-content">
+                    <h3>National University of Singapore</h3>
+                    <p class="job-title">IT Application Developer Intern</p>
+                    <ul>
+                        <li>Supported digital content creation and UX/UI design matters.</li>
+                        <li>Performed User Acceptance Testing (UAT) for applications.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="about-image">
+                <!-- Add your portrait here -->
+                <img src="images/IMG_0548.JPG" alt="Musfirah Ali">
+            </div>
+            <div class="about-text">
+                <p class="section-label">ABOUT ME</p>
+                <h2 class="large-text">Bridging the gap between <strong>technical UX Design</strong> and <strong>empathetic design.</strong></h2>
+                
+                <p>I am an Immersive Media student at Ngee Ann Polytechnic with a passion for crafting digital experiences that feel natural and meaningful. My journey started with a fascination for how people interact with technology, leading me to specialize in UX/UI design and Social Media Marketing.</p>
+
+                <div class="expertise-list">
+                    <div class="skill-item"><strong>Technical:</strong> Front-end Development, Media Production, Wireframing, UI Design Tools</div>
+                    <div class="skill-item"><strong>Soft Skills:</strong> UX Research, Empathy Mapping, Empathetic Design, User Advocacy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
     <footer id="contact">
-    <div class="container">
-        <span class="section-label">Contact Me</span>
-        <div class="footer-grid">
-            <!-- Main CTA -->
-            <div class="footer-main">
-                <h2 class="footer-heading">Interested in collaborating or just want to say hi?</h2>
-                <a href="mailto:musfirahali15@gmail.com" class="big-email-link">musfirahali15@gmail.com</a>
+        <div class="container footer-content">
+            <p class="section-label">CONTACT ME</p>
+            <h2>Interested in collaborating or just want to say hi?</h2>
+            
+            <div class="contact-links">
+                <a href="mailto:musfirahali15@gmail.com" class="contact-item">musfirahali15@gmail.com</a>
+  
+                <a href="tel:+65 8899 1741" class="contact-item">+65 8899 1741</a>
             </div>
             
-            <!-- Side Contact Info -->
-            <div class="footer-side">
-                <div class="contact-group">
-                    <span class="contact-label">Socials</span>
-                    <a href="https://www.linkedin.com/in/musfirah-mohamed-ali-264632252" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/musfirah-mohd-ali" target="_blank">GitHub</a>
-                </div>
-                <div class="contact-group">
-                    <span class="contact-label">Phone</span>
-                    <p>+65 8899 1741</p>
-                </div>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/musfirah-mohamed-ali-264632252" target="_blank">LinkedIn</a>
+                <a href="https://github.com/musfirahali" target="_blank">GitHub</a>
             </div>
+            <p class="copyright">© 2026 MUSFIRAH BINTE MOHAMED ALI. IMMERSIVE MEDIA @ NP.</p>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Musfirah Binte Mohamed Ali. Immersive Media @ NP.</p>
-        </div>
-    </div>
     </footer>
 
 </body>
