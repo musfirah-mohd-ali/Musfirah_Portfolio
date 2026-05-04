@@ -15,10 +15,11 @@ html {
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.7;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -27,7 +28,7 @@ body {
     padding: 0 5%;
 }
 
-/* 3. NAVIGATION - Fixed Alignment */
+/* 3. NAVIGATION */
 nav {
     padding: 0;
     position: fixed;
@@ -45,7 +46,7 @@ nav {
     padding: 0 5%;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertical alignment fix */
+    align-items: center;
     height: 80px;
 }
 
@@ -77,8 +78,8 @@ nav {
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    line-height: 1.05;
     margin: 10px 0 25px 0;
     font-weight: 700;
 }
@@ -92,12 +93,13 @@ h1 {
 }
 
 .hero-description {
-    max-width: 600px;
+    max-width: 650px;
     font-size: 1.25rem;
-    opacity: 0.8;
+    color: #4a4540;
+    margin-top: 30px;
 }
 
-/* 5. SECTION LABELS */
+/* 5. SECTION HEADERS */
 .section-label {
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -105,10 +107,11 @@ h1 {
     letter-spacing: 4px;
     margin-bottom: 60px;
     display: block;
+    color: var(--text);
     opacity: 0.6;
 }
 
-/* 6. PROJECTS SECTION */
+/* 6. PROJECTS SECTION - Updated for stacked Roles */
 .project-section {
     background-color: var(--neutral);
     padding: 120px 0;
@@ -124,34 +127,65 @@ h1 {
     background: var(--bg);
     padding: 50px 40px;
     border-radius: 4px;
+    cursor: pointer;
     transition: var(--transition);
+    border: 1px solid transparent;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 30px 60px rgba(40, 34, 29, 0.1);
+    border-color: var(--accent);
+}
+
+/* Updated card-header to stack elements vertically */
+.card-header {
+    display: flex;
+    flex-direction: column; /* Stacks year and role[cite: 1] */
+    align-items: flex-start;
+    margin-bottom: 15px;
 }
 
 .project-year {
-    color: var(--accent);
+    color: var(--accent); /* Brick Red[cite: 1] */
     font-size: 0.8rem;
     font-weight: 700;
+    margin-bottom: 8px; /* Gap between year and role */
+}
+
+.project-role {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text);
+    background-color: var(--neutral); /* Sand[cite: 1] */
+    padding: 4px 10px;
+    border-radius: 2px;
+    display: inline-block;
 }
 
 .project-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     margin: 15px 0;
+    font-weight: 700;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
 }
 
 .tags span {
-    display: inline-block;
     border: 1px solid var(--neutral);
     padding: 6px 16px;
-    margin: 20px 10px 0 0;
     font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* 7. EXPERIENCE SECTION */
@@ -162,62 +196,74 @@ h1 {
 .exp-item {
     display: grid;
     grid-template-columns: 280px 1fr;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     gap: 40px;
 }
 
 .exp-date {
     font-weight: 700;
-    color: var(--accent); /* Brick Red for dates[cite: 1] */
+    color: var(--accent);
     font-size: 0.85rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .exp-content h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     margin: 0;
 }
 
 .exp-content h4 {
-    margin: 5px 0 15px;
-    opacity: 0.7;
-    font-weight: 400;
+    margin: 8px 0 20px 0;
+    color: #666;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .exp-content ul {
-    padding-left: 20px;
+    margin: 0;
+    padding-left: 18px;
+    list-style-type: square;
 }
 
 .exp-content li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    max-width: 700px;
+    color: #333;
 }
 
 /* 8. ABOUT SECTION */
 .about-section {
-    padding: 120px 0;
+    padding: 120px 0 180px;
     border-top: 1px solid var(--neutral);
 }
 
 .large-text {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
-    line-height: 1.3;
     max-width: 900px;
+    line-height: 1.3;
+    color: var(--text);
 }
 
-/* 9. FOOTER / CONTACT */
+/* 9. FOOTER / CONTACT SECTION */
 footer {
-    background-color: var(--text); /* Charcoal[cite: 1] */
-    color: var(--bg); /* Cream[cite: 1] */
+    background-color: var(--text);
+    color: var(--bg);
     padding: 100px 0 40px;
 }
 
-footer .section-label { color: var(--bg); opacity: 0.4; }
+footer .section-label {
+    color: var(--bg);
+    opacity: 0.4;
+    margin-bottom: 40px;
+}
 
 .footer-content {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 40px;
     margin-bottom: 80px;
@@ -227,22 +273,33 @@ footer .section-label { color: var(--bg); opacity: 0.4; }
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     max-width: 500px;
+    line-height: 1.2;
+    margin-bottom: 30px;
 }
 
 .email-link {
-    color: var(--accent); /* Brick Red[cite: 1] */
+    color: var(--accent);
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: 600;
     border-bottom: 2px solid var(--accent);
+    transition: var(--transition);
 }
+
+.email-link:hover { opacity: 0.8; }
 
 .footer-socials a {
     display: block;
     color: var(--bg);
     text-decoration: none;
+    font-size: 1.1rem;
     margin-bottom: 15px;
+    transition: var(--transition);
 }
+
+.footer-socials a:hover { color: var(--accent); }
+
+.phone { opacity: 0.6; margin-top: 20px; }
 
 .footer-bottom {
     border-top: 1px solid rgba(219, 211, 201, 0.1);
@@ -250,12 +307,21 @@ footer .section-label { color: var(--bg); opacity: 0.4; }
     font-size: 0.75rem;
     opacity: 0.5;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* 10. MOBILE RESPONSIVENESS */
+/* 10. RESPONSIVENESS */
 @media (max-width: 768px) {
-    .exp-item { grid-template-columns: 1fr; gap: 10px; }
-    .nav-content .links { display: none; } /* Could add a hamburger menu later */
+    .exp-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .nav-content .links { display: none; }
+
     h1 { font-size: 3rem; }
+
     .large-text { font-size: 1.6rem; }
+
+    .footer-content { flex-direction: column; }
 }
