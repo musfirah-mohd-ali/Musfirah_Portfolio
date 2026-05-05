@@ -33,20 +33,18 @@ body {
 
 .logo {
     text-decoration: none;
-    color: var(--text); /* Uses your charcoal/black color */
+    color: var(--text);
     font-weight: 800;
     font-size: 1rem;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-/* Optional: Keep it black even when hovered */
 .logo:hover {
     color: var(--text);
 }
 
 /* 3. NAVIGATION */
-/* --- DESKTOP NAVIGATION STYLES --- */
 nav {
     position: fixed;
     top: 0;
@@ -61,9 +59,9 @@ nav {
 
 .nav-content {
     display: flex;
-    justify-content: space-between; /* Pushes Logo left and Links right */
+    justify-content: space-between;
     align-items: center;
-    width: 100%; /* Spans the full container width */
+    width: 100%;
 }
 
 .nav-links {
@@ -144,7 +142,7 @@ h1 {
 }
 
 .project-card p {
-    flex-grow: 1; /* Aligns the bottom tags */
+    flex-grow: 1;
     opacity: 0.8;
     margin-bottom: 30px;
 }
@@ -244,7 +242,7 @@ h1 {
 .about-image img {
     width: 100%;
     height: auto;
-    filter: grayscale(20%); /* Fits the smoky pastel vibe */
+    filter: grayscale(20%);
     border: 1px solid var(--neutral);
 }
 
@@ -281,8 +279,8 @@ h1 {
     display: inline-block;
     margin: 20px 0 40px;
     padding: 15px 35px;
-    background-color: var(--text); /* Charcoal for high contrast */
-    color: var(--bg); /* Cream text */
+    background-color: var(--text);
+    color: var(--bg);
     text-decoration: none;
     font-weight: 800;
     font-size: 0.75rem;
@@ -360,9 +358,7 @@ footer h2 {
 }
 
 /* 8. MOBILE VIEW TRANSFORMATION */
-/* --- THE SEAMLESS SCROLL MOBILE VIEW (NO NAV) --- */
 @media (max-width: 768px) {
-    
     /* 1. Simplify Nav: Hide all menu links and toggles */
     .nav-links, 
     .nav-toggle, 
@@ -383,7 +379,7 @@ footer h2 {
     }
 
     .logo {
-        font-size: 0.9rem; /* Slightly smaller for mobile screens */
+        font-size: 0.9rem;
     }
 
     /* 2. Hero Scaling */
@@ -410,12 +406,12 @@ footer h2 {
     }
 
     .about-image {
-        order: 1; /* Portrait on top */
+        order: 1;
         width: 100%;
     }
 
     .about-text {
-        order: 2; /* Bio and Button below */
+        order: 2;
         text-align: left;
     }
 
