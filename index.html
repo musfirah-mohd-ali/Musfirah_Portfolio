@@ -6,6 +6,7 @@
     <title>Musfirah Ali | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -88,6 +89,51 @@
             </div>
         </div>
     </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="digital-designs" class="design-section">
+        <div class="container">
+            <p class="section-label">DIGITAL DESIGNS & PORTFOLIO</p>
+            
+            <div class="design-carousel-container">
+                <button class="slide-arrow prev" onclick="changeSlide(-1)">&#8592;</button>
+
+                <div class="design-track-viewport">
+                    <div class="design-track">
+                        <div class="design-slide" onclick="openPost('group1')">
+                            <img src="images/SaveClip.App_655991143_18150538129457452_4970595272513946665_n (1).jpg" alt="Group 1">
+                            <div class="design-overlay"><span>VIEW FULL POST</span></div>
+                        </div>
+                        <div class="design-slide" onclick="openPost('group2')">
+                            <img src="images/651377820_18096682117820708_3955526221074624476_n.jpg" alt="Group 2">
+                            <div class="design-overlay"><span>VIEW FULL POST</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slide-arrow next" onclick="changeSlide(1)">&#8594;</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="postModal" class="post-modal">
+        <span class="close-post" onclick="closePost()">&times;</span>
+        
+        <div class="modal-content-wrapper">
+            <div class="modal-text-content">
+                <p><strong>Description:</strong></p>
+                <p id="modalDescription"></p>
+            </div>
+
+            <div class="modal-carousel-container">
+                <div id="modalCarouselTrack" class="modal-carousel-track">
+                    </div>
+                
+                <button class="modal-nav prev" onclick="moveModalSlide(-1)">&#10229;</button>
+                <button class="modal-nav next" onclick="moveModalSlide(1)">&#10230;</button>
+            </div>
+        </div>
+    </div>
 
     <!-- EXPERIENCE SECTION -->
     <section id="experience" class="exp-section">

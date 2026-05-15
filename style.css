@@ -179,6 +179,148 @@ h1 {
     font-weight: 600;
 }
 
+/*DIGITAL PORTFOLIO SECTION*/
+/* Design Section Base */
+.design-section {
+    padding: 100px 0;
+}
+
+.design-carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1000px; /* Slightly wider to fit arrows on sides */
+    margin: 40px auto;
+}
+
+/* This hides the extra slides */
+.design-track-viewport {
+    overflow: hidden;
+    width: 100%;
+    max-width: 850px; /* Your collage width */
+    border-radius: 8px;
+}
+
+.design-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.design-slide { min-width: 100%; position: relative; cursor: pointer; padding: 0 5px; }
+.design-slide img { width: 100%; border-radius: 4px; }
+
+/* View Full Post Overlay */
+.design-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(40, 34, 29, 0.4); opacity: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: 0.3s; color: white; font-weight: 800; font-size: 0.7rem; letter-spacing: 2px;
+}
+.design-slide:hover .design-overlay { opacity: 1; }
+
+/* Arrows */
+.slide-arrow {
+    background: white;
+    border: 1px solid #E0DCD4;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #28221D;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin: 0 15px; /* Spacing between arrow and image */
+    flex-shrink: 0; /* Prevents arrows from squishing */
+}
+
+.slide-arrow:hover {
+    background: #28221D;
+    color: white;
+}
+
+/* Pull them outside the photo area */
+.slide-arrow.prev { left: -25px; }
+.slide-arrow.next { right: -25px; }
+
+
+.slide-arrow.prev { left: -20px; } /* Pull it slightly out for better UX */
+.slide-arrow.next { right: -20px; }
+.prev { left: 10px; } .next { right: 10px; }
+
+/* Modal Styling */
+.post-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; /* This ensures it sits on top of everything else */
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%;
+    background: #F9F7F2; /* Your cream background */
+    overflow-y: auto;
+}
+.modal-scroll-area { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 80px 20px; }
+.modal-scroll-area img { max-width: 800px; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+.close-post { position: fixed; top: 20px; right: 30px; font-size: 2.5rem; cursor: pointer; }
+
+.modal-content-wrapper {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-text-content {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.modal-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.modal-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.modal-carousel-track img {
+    min-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.modal-nav.prev { left: 10px; }
+.modal-nav.next { right: 10px; }
+
 /* 6. EXPERIENCE SECTION */
 .exp-section {
     padding: 100px 0;
