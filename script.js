@@ -4,17 +4,41 @@ const postGalleries = {
     'group1': {
         description: "This post was created as an assignment for my Design Principles module in my first year of Polytechnic. The inspiration came from scrapbooking and making a post be 'messily' organized.",
         images: [
-            'images/SaveClip.App_655991143_18150538129457452_4970595272513946665_n (1).jpg',
-            'images/SaveClip.App_654317667_18316776400249931_6795416395720381741_n.jpg',
-            'images/SaveClip.App_655226358_18171196198408047_6732408999947200622_n.jpg'  
+            'images/aboutMe.jpg',
+            'images/aboutMe2.jpg',
+            'images/aboutMe3.jpg',  
             
         ]
     },
     'group2': {
         description: "This post showcases my involvement in the CCA Fair, highlighting the creative and collaborative efforts of my peers.",
         images: [
-            'images/651377820_18096682117820708_3955526221074624476_n.jpg',
-            'images/648990063_17995790084874632_3678229428231411820_n.jpg',
+            'images/ccaFair.jpg',
+            'images/ccaFair2.jpg',
+        ]
+    },
+    'group3': {
+        description: "This post was a recap post for our May General Meting for the Student Council where we planed fun games for our CCA to bond.",
+        images: [
+            'images/mayGM.jpg',
+            'images/mayGM2.jpg',
+        ]
+    },
+    'group4': {
+        description: "This post was to showcase my fellow EXCO members in our award ceremoney where we were awards Service Star Awards for our contributions to the club.",
+        images: [
+            'images/ssa.jpg',
+            'images/ssa2.jpg',
+            'images/ssa3.jpg',
+            'images/ssa4.jpg',
+            'images/ssa5.jpg',
+        ]
+    },
+    'group5': {
+        description: "This post was a recap of our January General Meeting, it was the first one of the new academic year where we got to meet all the new year 1s and new members.",
+        images: [
+            'images/janGM.jpg',
+            'images/janGM2.jpg',
         ]
     }
 };
