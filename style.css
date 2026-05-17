@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px; 
+}
+
 /* 1. THEME VARIABLES */
 :root {
     --bg: #F9F7F2;      /* Cream */
@@ -182,96 +187,146 @@ h1 {
 /*DIGITAL PORTFOLIO SECTION*/
 /* Design Section Base */
 .design-section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .design-carousel-container {
+    position: relative;
+    max-width: 550px; /* Matches your image width perfectly */
+    margin: 30px auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    max-width: 1000px; /* Slightly wider to fit arrows on sides */
-    margin: 40px auto;
 }
 
 /* This hides the extra slides */
 .design-track-viewport {
     overflow: hidden;
     width: 100%;
-    max-width: 850px; /* Your collage width */
-    border-radius: 8px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(40, 34, 29, 0.08);
+    background: #fff;
 }
 
 .design-track {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    width: 100%;
 }
 
-.design-slide { min-width: 100%; position: relative; cursor: pointer; padding: 0 5px; }
-.design-slide img { width: 100%; border-radius: 4px; }
+.design-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.design-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh; /* Keeps it from getting taller than the screen */
+    object-fit: cover; /* Drops the side margins completely */
+    display: block;
+}
 
 /* View Full Post Overlay */
 .design-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(40, 34, 29, 0.4); opacity: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: 0.3s; color: white; font-weight: 800; font-size: 0.7rem; letter-spacing: 2px;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(40, 34, 29, 0.4); 
+    opacity: 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: 0.3s; 
+    color: white; 
+    font-weight: 800; 
+    font-size: 0.7rem; 
+    letter-spacing: 2px;
 }
 .design-slide:hover .design-overlay { opacity: 1; }
 
 /* Arrows */
 .slide-arrow {
-    background: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
     border: 1px solid #E0DCD4;
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #28221D;
     cursor: pointer;
-    z-index: 10;
+    z-index: 25; /* Sits strictly on top of the image track layer */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    margin: 0 15px; /* Spacing between arrow and image */
-    flex-shrink: 0; /* Prevents arrows from squishing */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.25s ease;
 }
 
 .slide-arrow:hover {
     background: #28221D;
-    color: white;
+    color: #FFF;
+    border-color: #28221D;
+    transform: translateY(-50%) scale(1.08);
 }
 
-/* Pull them outside the photo area */
-.slide-arrow.prev { left: -25px; }
-.slide-arrow.next { right: -25px; }
+.slide-arrow.prev {
+    left: -23px; /* Safe overlap right on the left frame edge */
+}
 
+.slide-arrow.next {
+    right: -23px; /* Safe overlap right on the right frame edge */
+}
 
-.slide-arrow.prev { left: -20px; } /* Pull it slightly out for better UX */
-.slide-arrow.next { right: -20px; }
-.prev { left: 10px; } .next { right: 10px; }
 
 /* Modal Styling */
 .post-modal {
-    display: none; 
-    position: fixed; 
-    z-index: 9999; /* This ensures it sits on top of everything else */
-    left: 0; 
-    top: 0; 
-    width: 100%; 
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
     height: 100%;
-    background: #F9F7F2; /* Your cream background */
+    background: rgba(249, 247, 242, 0.98); /* Smooth cream background */
     overflow-y: auto;
 }
-.modal-scroll-area { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 80px 20px; }
-.modal-scroll-area img { max-width: 800px; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-.close-post { position: fixed; top: 20px; right: 30px; font-size: 2.5rem; cursor: pointer; }
+.modal-scroll-area { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 30px; 
+    padding: 80px 20px; 
+}
+
+.modal-scroll-area img { 
+    max-width: 800px; 
+    width: 100%; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+}
+
+.close-post { 
+    position: fixed; 
+    top: 20px; 
+    right: 30px; 
+    font-size: 2.5rem; 
+    cursor: pointer; 
+}
 
 .modal-content-wrapper {
-    max-width: 1000px;
-    margin: 60px auto;
+    max-width: 600px; /* Constrains the entire popup workspace */
+    margin: 40px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -280,50 +335,74 @@ h1 {
 
 .modal-text-content {
     width: 100%;
-    max-width: 800px;
-    margin-bottom: 30px;
-    text-align: left;
+    background: rgba(40, 34, 29, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
     font-size: 0.9rem;
-    line-height: 1.6;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
 }
 
 .modal-carousel-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    height: 65vh; /* Restricts the modal picture height */
     overflow: hidden;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 .modal-carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    height: 100%;
 }
 
 .modal-carousel-track img {
     min-width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: contain; /* Shrinks the image perfectly to fit the box frame */
+    background: #fff;
 }
 
 .modal-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.8);
-    border: none;
-    font-size: 1.5rem;
-    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e0dcd4;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 50%;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.modal-nav.prev { left: 10px; }
-.modal-nav.next { right: 10px; }
+.modal-nav.prev { left: 15px; }
+.modal-nav.next { right: 15px; }
+
+/* The X Close Button */
+.close-post {
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text);
+    transition: 0.2s;
+    z-index: 10000;
+}
+.close-post:hover { transform: scale(2.1); }
 
 /* 6. EXPERIENCE SECTION */
 .exp-section {
     padding: 100px 0;
+    background: var(--neutral);
 }
 
 .exp-item {
