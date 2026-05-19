@@ -37,12 +37,11 @@
     </header>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" class="project-section">
+<section id="projects" class="project-section">
         <div class="container">
             <p class="section-label">SELECTED PROJECTS</p>
             <div class="project-grid">
-                
-                <!-- Project: Forget Me Not -->
+                <!--FORGET ME NOT-->
                 <div class="project-card">
                     <div class="card-meta">
                         <span class="date">OCT 2025 — FEB 2026</span>
@@ -56,8 +55,7 @@
                         <span>C#</span>
                     </div>
                 </div>
-
-                <!-- Project: Kiasu Kouriers -->
+                <!--KIASU KOURIERS-->
                 <div class="project-card">
                     <div class="card-meta">
                         <span class="date">MAY 2025 — JUN 2025</span>
@@ -71,8 +69,7 @@
                         <span>Game Design</span>
                     </div>
                 </div>
-
-                <!-- Project: Musli Travels -->
+                <!--MUSLI TRAVELS  -->
                 <div class="project-card">
                     <div class="card-meta">
                         <span class="date">OCT 2024 — FEB 2025</span>
@@ -94,59 +91,78 @@
     <!-- PORTFOLIO SECTION -->
     <section id="digital-designs" class="design-section">
         <div class="container">
-            <p class="section-label">DIGITAL DESIGNS & PORTFOLIO</p>
+            <div class="design-section-header">
+                <p class="section-label">DIGITAL DESIGNS & PORTFOLIO</p>
+                <div class="design-nav-controls">
+                    <button class="slide-arrow prev" onclick="changeSlide(-1)">&#8592;</button>
+                    <button class="slide-arrow next" onclick="changeSlide(1)">&#8594;</button>
+                </div>
+            </div>
             
             <div class="design-carousel-container">
-                <button class="slide-arrow prev" onclick="changeSlide(-1)">&#8592;</button>
-
                 <div class="design-track-viewport">
                     <div class="design-track">
-                        <div class="design-slide" onclick="openPost('group1')">
-                            <img src="images/aboutMe.jpg" alt="Group 1">
-                            <div class="design-overlay"><span>VIEW FULL POST</span></div>
+                        
+                        <div class="design-slide" data-total-images="3">
+                            <div class="slide-gallery-wrapper">
+                                <img src="images/aboutMe.jpg" alt="About Me 1">
+                                <img src="images/aboutMe2.jpg" alt="About Me 2">
+                                <img src="images/aboutMe3.jpg" alt="About Me 3">
+                            </div>
                         </div>
-                        <div class="design-slide" onclick="openPost('group2')">
-                            <img src="images/ccaFair.jpg" alt="Group 2">
-                            <div class="design-overlay"><span>VIEW FULL POST</span></div>
+
+                        <div class="design-slide" data-total-images="2">
+                            <div class="slide-gallery-wrapper">
+                                <img src="images/ccaFair.jpg" alt="CCA Fair 1">
+                                <img src="images/ccaFair2.jpg" alt="CCA Fair 2">
+                            </div>
                         </div>
-                        <div class="design-slide" onclick="openPost('group3')">
-                            <img src="images/mayGM.jpg" alt="Group 3">
-                            <div class="design-overlay"><span>VIEW FULL POST</span></div>
+
+                        <div class="design-slide" data-total-images="2">
+                            <div class="slide-gallery-wrapper">
+                                <img src="images/mayGM.jpg" alt="May GM 1">
+                                <img src="images/mayGM2.jpg" alt="May GM 2">
+                            </div>
                         </div>
-                        <div class="design-slide" onclick="openPost('group4')">
-                            <img src="images/ssa.jpg" alt="Group 4">
-                            <div class="design-overlay"><span>VIEW FULL POST</span></div>
+
+                        <div class="design-slide" data-total-images="5">
+                            <div class="slide-gallery-wrapper">
+                                <img src="images/ssa.jpg" alt="SSA 1">
+                                <img src="images/ssa2.jpg" alt="SSA 2">
+                                <img src="images/ssa3.jpg" alt="SSA 3">
+                                <img src="images/ssa4.jpg" alt="SSA 4">
+                                <img src="images/ssa5.jpg" alt="SSA 5">
+                            </div>
                         </div>
-                        <div class="design-slide" onclick="openPost('group5')">
-                            <img src="images/janGM.jpg" alt="Group 5">
-                            <div class="design-overlay"><span>VIEW FULL POST</span></div>
+
+                        <div class="design-slide" data-total-images="2">
+                            <div class="slide-gallery-wrapper">
+                                <img src="images/janGM.jpg" alt="Jan GM 1">
+                                <img src="images/janGM2.jpg" alt="Jan GM 2">
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
-                <button class="slide-arrow next" onclick="changeSlide(1)">&#8594;</button>
+                <div class="sub-nav-container">
+                    <div class="gallery-dots" id="gallery-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="gallery-arrows">
+                        <button class="sub-arrow" onclick="changeSubImage(-1)">&#8249;</button>
+                        <button class="sub-arrow" onclick="changeSubImage(1)">&#8250;</button>
+                    </div>
+                </div>
+
+                <div class="design-description-box">
+                    <p id="design-desc-text">This post was created as an assignment for my Design Principles module in my first year of Polytechnic. The inspiration came from scrapbooking and making a post be 'messily' organized.</p>
+                </div>
             </div>
         </div>
     </section>
-
-    <div id="postModal" class="post-modal">
-        <span class="close-post" onclick="closePost()">&times;</span>
-        
-        <div class="modal-content-wrapper">
-            <div class="modal-text-content">
-                <p><strong>Description:</strong></p>
-                <p id="modalDescription"></p>
-            </div>
-
-            <div class="modal-carousel-container">
-                <div id="modalCarouselTrack" class="modal-carousel-track">
-                    </div>
-                
-                <button class="modal-nav prev" onclick="moveModalSlide(-1)">&#10229;</button>
-                <button class="modal-nav next" onclick="moveModalSlide(1)">&#10230;</button>
-            </div>
-        </div>
-    </div>
 
     <!-- EXPERIENCE SECTION -->
     <section id="experience" class="exp-section">

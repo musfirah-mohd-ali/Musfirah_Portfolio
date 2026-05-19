@@ -185,27 +185,47 @@ h1 {
 }
 
 /*DIGITAL PORTFOLIO SECTION*/
-/* Design Section Base */
 .design-section {
-    padding: 80px 0;
+    padding: 100px 0;
+    background-color: var(--bg);
+}
+
+.design-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    max-width: 1100px;
+}
+
+.design-section-header .section-label {
+    margin-bottom: 0;
+}
+
+.design-nav-controls {
+    display: flex;
+    gap: 12px;
 }
 
 .design-carousel-container {
     position: relative;
-    max-width: 550px; /* Matches your image width perfectly */
-    margin: 30px auto;
+    max-width: 1100px;
+    margin: 0 auto 40px 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-/* This hides the extra slides */
+/* THE ACTIVE SLIDE WINDOW VIEWPORT */
 .design-track-viewport {
-    overflow: hidden;
-    width: 100%;
+    overflow: visible;
+    width: 460px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(40, 34, 29, 0.08);
+    box-shadow: 0 10px 35px rgba(40, 34, 29, 0.05);
     background: #fff;
+    margin-bottom: 16px; /* Reduced to give space to the sub-nav ribbon */
+    clip-path: inset(-100px -1200px -100px 0px); 
 }
 
 .design-track {
@@ -215,189 +235,116 @@ h1 {
 }
 
 .design-slide {
-    min-width: 100%;
+    min-width: 460px;
+    width: 460px;
     box-sizing: border-box;
     position: relative;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-right: 35px;
 }
 
-.design-slide img {
+/* HIDDEN SUB-GALLERY INNER OVERFLOW WORKING PROPERLY NOW */
+.slide-gallery-wrapper {
+    display: flex;
+    overflow: hidden; /* We now lock it completely to let JavaScript click buttons do the work */
+    border-radius: 12px;
+    width: 100%;
+}
+
+.slide-gallery-wrapper img {
+    min-width: 100%;
     width: 100%;
     height: auto;
-    max-height: 70vh; /* Keeps it from getting taller than the screen */
-    object-fit: cover; /* Drops the side margins completely */
+    max-height: 52vh;
+    object-fit: cover;
     display: block;
+    flex-shrink: 0;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth image transition */
 }
 
-/* View Full Post Overlay */
-.design-overlay {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background: rgba(40, 34, 29, 0.4); 
-    opacity: 0;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    transition: 0.3s; 
-    color: white; 
-    font-weight: 800; 
-    font-size: 0.7rem; 
-    letter-spacing: 2px;
-}
-.design-slide:hover .design-overlay { opacity: 1; }
-
-/* Arrows */
+/* MAIN TOP NAV ARROWS BUTTON STYLING */
 .slide-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(4px);
     border: 1px solid #E0DCD4;
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #28221D;
     cursor: pointer;
-    z-index: 25; /* Sits strictly on top of the image track layer */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease-in-out;
 }
 
 .slide-arrow:hover {
     background: #28221D;
     color: #FFF;
     border-color: #28221D;
-    transform: translateY(-50%) scale(1.08);
+    transform: scale(1.06);
 }
 
-.slide-arrow.prev {
-    left: -23px; /* Safe overlap right on the left frame edge */
-}
-
-.slide-arrow.next {
-    right: -23px; /* Safe overlap right on the right frame edge */
-}
-
-
-/* Modal Styling */
-.post-modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(249, 247, 242, 0.98); /* Smooth cream background */
-    overflow-y: auto;
-}
-.modal-scroll-area { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    gap: 30px; 
-    padding: 80px 20px; 
-}
-
-.modal-scroll-area img { 
-    max-width: 800px; 
-    width: 100%; 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
-}
-
-.close-post { 
-    position: fixed; 
-    top: 20px; 
-    right: 30px; 
-    font-size: 2.5rem; 
-    cursor: pointer; 
-}
-
-.modal-content-wrapper {
-    max-width: 600px; /* Constrains the entire popup workspace */
-    margin: 40px auto;
-    padding: 20px;
+/* SUB NAVIGATION RIBBON (DOTS + COMPACT ARROWS) */
+.sub-nav-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    width: 425px; /* Aligns perfectly with description widths */
+    margin-bottom: 12px;
+    padding: 0 4px;
 }
 
-.modal-text-content {
-    width: 100%;
-    background: rgba(40, 34, 29, 0.03);
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    font-size: 0.9rem;
-    color: var(--text);
-    border-left: 3px solid var(--accent);
-}
-
-.modal-carousel-container {
-    position: relative;
-    width: 100%;
-    height: 65vh; /* Restricts the modal picture height */
-    overflow: hidden;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-}
-
-.modal-carousel-track {
+/* PAGINATION DOT TRACK */
+.gallery-dots {
     display: flex;
-    height: 100%;
+    gap: 8px;
 }
 
-.modal-carousel-track img {
-    min-width: 100%;
-    height: 100%;
-    object-fit: contain; /* Shrinks the image perfectly to fit the box frame */
-    background: #fff;
-}
-
-.modal-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid #e0dcd4;
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-    cursor: pointer;
+.dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    z-index: 10;
+    background-color: var(--neutral, #D9D2C5);
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--accent, #A34017); /* Active scrapbook amber/orange highlights */
+    transform: scale(1.2);
+}
+
+/* COMPACT TEXT CONTROLS */
+.gallery-arrows {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 16px;
 }
 
-.modal-nav.prev { left: 15px; }
-.modal-nav.next { right: 15px; }
-
-/* The X Close Button */
-.close-post {
-    position: fixed;
-    top: 25px;
-    right: 35px;
-    font-size: 2rem;
+.sub-arrow {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #28221D;
     cursor: pointer;
-    color: var(--text);
-    transition: 0.2s;
-    z-index: 10000;
+    padding: 0 4px;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
-.close-post:hover { transform: scale(2.1); }
+
+.sub-arrow:hover {
+    color: var(--accent, #A34017);
+    transform: scale(1.15);
+}
+
+/* DESCRIPTION BOX STYLING */
+.design-description-box {
+    width: 425px;
+    padding: 0 0 0 4px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text);
+    opacity: 0.85;
+}
 
 /* 6. EXPERIENCE SECTION */
 .exp-section {
