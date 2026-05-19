@@ -524,6 +524,9 @@ footer h2 {
 }
 
 /* 8. MOBILE VIEW TRANSFORMATION */
+/* ==========================================================================
+   8. MOBILE VIEW TRANSFORMATION
+   ========================================================================== */
 @media (max-width: 768px) {
     /* 1. Simplify Nav: Hide all menu links and toggles */
     .nav-links, 
@@ -562,6 +565,40 @@ footer h2 {
     .hero-description {
         margin: 0 auto;
         font-size: 1rem;
+    }
+
+    /* NEW: Mobile Portfolio Carousel Rescaling */
+    .design-section-header {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .design-carousel-container {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .design-track-viewport {
+        width: 100%;       /* Allow the active card frame to span the full width of the smartphone screen */
+        overflow: hidden;  /* Disable the 'peek-a-boo' desktop side overhang layout */
+        clip-path: none;   /* Clear the desktop right clipping wall rule */
+    }
+
+    .design-slide {
+        min-width: 100%;   /* Forces each slide card to take up exactly one screen width */
+        width: 100%;
+        padding-right: 0;  /* Clear desktop whitespace gaps */
+    }
+
+    .sub-nav-container {
+        width: 100%;       /* Stretch dots and sub-arrows to align with full-width cards */
+        padding: 0 4px;
+    }
+
+    .design-description-box {
+        width: 100%;       /* Stretch description box text cleanly below controls */
+        padding: 0 4px;
     }
 
     /* 3. About Section Layout: Photo first, then Text */

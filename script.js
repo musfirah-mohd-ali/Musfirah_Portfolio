@@ -101,3 +101,27 @@ function updateDots() {
 document.addEventListener("DOMContentLoaded", () => {
     generateDots();
 });
+
+function changeSlide(direction) {
+    const track = document.querySelector('.design-track');
+    const slides = document.querySelectorAll('.design-slide');
+    const descText = document.getElementById('design-desc-text');
+    
+    const totalSlides = slides.length;
+    currentDesignIndex = (currentDesignIndex + direction + totalSlides) % totalSlides;
+    
+    // Check if the screen is mobile or desktop size to choose the right slide shift distance
+    const isMobile = window.innerWidth <= 768;
+    const slideStepWidth = isMobile ? track.clientWidth : 460;
+    
+    // Shift the track perfectly based on the active device profile width
+    track.style.transform = `translateX(-${currentDesignIndex * slideStepWidth}px)`;
+    
+    if (descText) {
+        descText.textContent = designDescriptions[currentDesignIndex];
+    }
+
+    currentSubImageIndex = 0;
+    updateSubImageDisplay();
+    generateDots();
+}
