@@ -125,3 +125,58 @@ function changeSlide(direction) {
     updateSubImageDisplay();
     generateDots();
 }
+
+const projectData = [
+    {
+        title: "Forget Me Not",
+        date: "OCT 2025 — FEB 2026",
+        role: "UX RESEARCHER • UX DESIGNER",
+        desc: "A VR simulation designed to build empathy and raise awareness for dementia care through immersive storytelling and system-based interaction.",
+        tags: ["Unity", "XR Interaction", "C#"]
+    },
+    {
+        title: "Kiasu Kouriers",
+        date: "MAY 2025 — JUN 2025",
+        role: "LEAD DEVELOPER • UX RESEARCHER",
+        desc: "A gamified approach to road safety education built in Unity, teaching students traffic laws through active delivery simulation.",
+        tags: ["Unity 3D", "UX/UI", "Game Design"]
+    },
+    {
+        title: "Musli Travels",
+        date: "OCT 2024 — FEB 2025",
+        role: "LEADER • PROGRAMMER • 3D MODELLER",
+        desc: "A travel website for users to shop for travel packages and essentials.",
+        tags: ["3D Modelling", "HTML Programming", "CSS Programming"]
+    }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const rows = document.querySelectorAll('.project-list-row');
+    
+    rows.forEach(row => {
+        // Triggers instantly on mouse hover or tap touch
+        row.addEventListener('mouseenter', () => {
+            // Remove active style marker from previous rows
+            rows.forEach(r => r.classList.remove('active'));
+            row.classList.add('active');
+            
+            const index = parseInt(row.getAttribute('data-project'));
+            const data = projectData[index];
+            
+            // Seamlessly inject target text values
+            document.getElementById('proj-display-title').textContent = data.title;
+            document.getElementById('proj-display-date').textContent = data.date;
+            document.getElementById('proj-display-role').textContent = data.role;
+            document.getElementById('proj-display-desc').textContent = data.desc;
+            
+            // Redraw tag pills dynamically
+            const tagsContainer = document.getElementById('proj-display-tags');
+            tagsContainer.innerHTML = '';
+            data.tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.textContent = tag;
+                tagsContainer.appendChild(span);
+            });
+        });
+    });
+});

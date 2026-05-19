@@ -1,8 +1,3 @@
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 30px; 
-}
-
 /* 1. THEME VARIABLES */
 :root {
     --bg: #F9F7F2;      /* Cream */
@@ -20,6 +15,7 @@ html {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 30px; 
 }
 
 body {
@@ -90,6 +86,7 @@ nav {
 /* 4. HERO SECTION */
 .hero {
     padding: 180px 0 100px;
+    background: var(--neutral);
 }
 
 .hero-label {
@@ -114,11 +111,6 @@ h1 {
 }
 
 /* 5. PROJECTS SECTION */
-.project-section {
-    padding: 100px 0;
-    background: var(--neutral);
-}
-
 .section-label {
     font-size: 0.7rem;
     font-weight: 800;
@@ -127,67 +119,162 @@ h1 {
     opacity: 0.6;
 }
 
-.project-grid {
+.project-section {
+    padding: 120px 0;
+    background-color: var(--bg);
+    border-top: 1px solid rgba(40, 34, 29, 0.08);
+}
+
+.project-split-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1.1fr 0.9fr; /* Golden ratio splitting */
+    gap: 80px;
+    align-items: flex-start;
 }
 
-.project-card {
-    background: var(--bg);
-    padding: 50px;
+/* LEFT SIDE: LIST LAYOUT */
+.project-list-side {
     display: flex;
     flex-direction: column;
 }
 
-.project-card h3 {
+.project-list-items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.project-list-row {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(40, 34, 29, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-list-date {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #7A7265;
+    letter-spacing: 0.5px;
+}
+
+.project-list-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin: 15px 0;
+    font-size: 1.6rem;
+    color: var(--text);
+    margin: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.project-card p {
-    flex-grow: 1;
+.project-list-role {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #7A7265;
     opacity: 0.8;
-    margin-bottom: 30px;
 }
 
-.card-meta {
+/* Interactive row hover behaviors */
+.project-list-row:hover .project-list-title {
+    color: var(--accent);
+    transform: translateX(8px);
+}
+
+/* Styling for the currently active/selected project */
+.project-list-row.active {
+    border-bottom-color: var(--accent);
+}
+
+.project-list-row.active .project-list-title {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+/* RIGHT SIDE: PREMIUM HIGHLIGHT CARD BOX */
+.project-display-side {
+    position: sticky;
+    top: 120px;
+}
+
+.project-display-card {
+    background: #FFFFFF;
+    border: 1px solid #E0DCD4;
+    border-radius: 12px;
+    padding: 45px 40px;
+    min-height: 400px; /* Gives the text card plenty of breathing room */
+    box-shadow: 0 10px 35px rgba(40, 34, 29, 0.03);
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: flex-start; /* Aligns content cleanly from the top down */
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.date {
+.display-meta {
+    display: flex;
+    flex-direction: column; /* Stack date and role neatly so they never mash together */
+    gap: 6px; /* Elegant gap between the meta rows */
+    border-bottom: 1px solid rgba(40, 34, 29, 0.06);
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+}
+
+/* Metadata Text Customizations */
+.display-meta .date {
     color: var(--accent);
     font-weight: 800;
     font-size: 0.75rem;
+    letter-spacing: 1px;
 }
 
-.role {
-    font-size: 0.65rem;
+.display-meta .role {
+    font-size: 0.7rem;
     font-weight: 700;
-    opacity: 0.5;
+    color: #7A7265;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+    line-height: 1.4;
 }
 
-.tags {
+/* Applied Playfair Display explicitly to match your other headers */
+#proj-display-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.4rem;
+    color: var(--text);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+#proj-display-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text);
+    opacity: 0.85;
+    margin-bottom: 35px; /* Pushes the tags neatly to the bottom frame */
+}
+
+/* Tags formatting inside display box */
+#proj-display-tags {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
-.tags span {
-    border: 1px solid rgba(40, 34, 29, 0.2);
-    padding: 5px 12px;
-    font-size: 0.65rem;
+#proj-display-tags span {
+    background-color: var(--bg);
+    border: 1px solid rgba(40, 34, 29, 0.08);
+    padding: 6px 14px;
+    font-size: 0.68rem;
     font-weight: 600;
+    border-radius: 20px;
+    color: var(--text);
 }
 
 /*DIGITAL PORTFOLIO SECTION*/
 .design-section {
     padding: 100px 0;
-    background-color: var(--bg);
+    background-color: var(--neutral);
 }
 
 .design-section-header {
@@ -303,7 +390,7 @@ h1 {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: var(--neutral, #D9D2C5);
+    background-color: var(--bg, #D9D2C5);
     transition: all 0.3s ease;
 }
 
@@ -347,7 +434,7 @@ h1 {
 /* 6. EXPERIENCE SECTION */
 .exp-section {
     padding: 100px 0;
-    background: var(--neutral);
+    background: var(--bgl);
 }
 
 .exp-item {
@@ -395,7 +482,7 @@ h1 {
 /* --- ABOUT SECTION --- */
 .about-section {
     padding: 120px 0;
-    background-color: var(--bg);
+    background-color: var(--neutral);
 }
 
 .about-grid {
