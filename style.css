@@ -127,7 +127,7 @@ h1 {
 
 .project-split-container {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr; /* Golden ratio splitting */
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 80px;
     align-items: flex-start;
 }
@@ -176,13 +176,11 @@ h1 {
     opacity: 0.8;
 }
 
-/* Interactive row hover behaviors */
 .project-list-row:hover .project-list-title {
     color: var(--accent);
     transform: translateX(8px);
 }
 
-/* Styling for the currently active/selected project */
 .project-list-row.active {
     border-bottom-color: var(--accent);
 }
@@ -203,24 +201,23 @@ h1 {
     border: 1px solid #E0DCD4;
     border-radius: 12px;
     padding: 45px 40px;
-    min-height: 400px; /* Gives the text card plenty of breathing room */
+    min-height: 400px;
     box-shadow: 0 10px 35px rgba(40, 34, 29, 0.03);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Aligns content cleanly from the top down */
+    justify-content: flex-start;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .display-meta {
     display: flex;
-    flex-direction: column; /* Stack date and role neatly so they never mash together */
-    gap: 6px; /* Elegant gap between the meta rows */
+    flex-direction: column;
+    gap: 6px;
     border-bottom: 1px solid rgba(40, 34, 29, 0.06);
     padding-bottom: 18px;
     margin-bottom: 25px;
 }
 
-/* Metadata Text Customizations */
 .display-meta .date {
     color: var(--accent);
     font-weight: 800;
@@ -237,7 +234,6 @@ h1 {
     line-height: 1.4;
 }
 
-/* Applied Playfair Display explicitly to match your other headers */
 #proj-display-title {
     font-family: 'Playfair Display', serif !important;
     font-size: 2.4rem;
@@ -251,10 +247,9 @@ h1 {
     line-height: 1.6;
     color: var(--text);
     opacity: 0.85;
-    margin-bottom: 35px; /* Pushes the tags neatly to the bottom frame */
+    margin-bottom: 35px;
 }
 
-/* Tags formatting inside display box */
 #proj-display-tags {
     display: flex;
     gap: 8px;
@@ -309,7 +304,7 @@ h1 {
     width: 460px;
     height: auto;
     border-radius: 12px;
-    margin-bottom: 16px; /* Reduced to give space to the sub-nav ribbon */
+    margin-bottom: 16px;
     clip-path: inset(-100px -640px -100px 0px); 
 }
 
@@ -330,7 +325,7 @@ h1 {
 /* HIDDEN SUB-GALLERY INNER OVERFLOW WORKING PROPERLY NOW */
 .slide-gallery-wrapper {
     display: flex;
-    overflow: hidden; /* We now lock it completely to let JavaScript click buttons do the work */
+    overflow: hidden;
     border-radius: 12px;
     width: 100%;
 }
@@ -343,7 +338,7 @@ h1 {
     object-fit: cover;
     display: block;
     flex-shrink: 0;
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth image transition */
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* MAIN TOP NAV ARROWS BUTTON STYLING */
@@ -375,7 +370,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 425px; /* Aligns perfectly with description widths */
+    width: 425px;
     margin-bottom: 12px;
     padding: 0 4px;
 }
@@ -395,7 +390,7 @@ h1 {
 }
 
 .dot.active {
-    background-color: var(--accent, #A34017); /* Active scrapbook amber/orange highlights */
+    background-color: var(--accent, #A34017);
     transform: scale(1.2);
 }
 
@@ -611,9 +606,6 @@ footer h2 {
 }
 
 /* 8. MOBILE VIEW TRANSFORMATION */
-/* ==========================================================================
-   8. MOBILE VIEW TRANSFORMATION
-   ========================================================================== */
 @media (max-width: 768px) {
     /* 1. Simplify Nav: Hide all menu links and toggles */
     .nav-links, 
@@ -654,7 +646,6 @@ footer h2 {
         font-size: 1rem;
     }
 
-    /* NEW: Mobile Portfolio Carousel Rescaling */
     .design-section-header {
         width: 100%;
         padding: 0;
@@ -667,24 +658,24 @@ footer h2 {
     }
 
     .design-track-viewport {
-        width: 100%;       /* Allow the active card frame to span the full width of the smartphone screen */
-        overflow: hidden;  /* Disable the 'peek-a-boo' desktop side overhang layout */
-        clip-path: none;   /* Clear the desktop right clipping wall rule */
+        width: 100%;
+        overflow: hidden;
+        clip-path: none;
     }
 
     .design-slide {
-        min-width: 100%;   /* Forces each slide card to take up exactly one screen width */
+        min-width: 100%;
         width: 100%;
-        padding-right: 0;  /* Clear desktop whitespace gaps */
+        padding-right: 0;
     }
 
     .sub-nav-container {
-        width: 100%;       /* Stretch dots and sub-arrows to align with full-width cards */
+        width: 100%;
         padding: 0 4px;
     }
 
     .design-description-box {
-        width: 100%;       /* Stretch description box text cleanly below controls */
+        width: 100%;
         padding: 0 4px;
     }
 
