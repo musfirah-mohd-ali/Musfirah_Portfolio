@@ -222,10 +222,8 @@ h1 {
     width: 460px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 10px 35px rgba(40, 34, 29, 0.05);
-    background: #fff;
     margin-bottom: 16px; /* Reduced to give space to the sub-nav ribbon */
-    clip-path: inset(-100px -1200px -100px 0px); 
+    clip-path: inset(-100px -640px -100px 0px); 
 }
 
 .design-track {
