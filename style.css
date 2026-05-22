@@ -121,7 +121,7 @@ h1 {
 
 .project-section {
     padding: 120px 0;
-    background-color: var(--bg);
+    background-color: var(--neutral);
     border-top: 1px solid rgba(40, 34, 29, 0.08);
 }
 
@@ -266,10 +266,10 @@ h1 {
     color: var(--text);
 }
 
-/*DIGITAL PORTFOLIO SECTION*/
+/* 4. DIGITAL PORTFOLIO SECTION*/
 .design-section {
     padding: 100px 0;
-    background-color: var(--neutral);
+    background-color: var(--bg);
 }
 
 .design-section-header {
@@ -429,7 +429,7 @@ h1 {
 /* 6. EXPERIENCE SECTION */
 .exp-section {
     padding: 100px 0;
-    background: var(--bgl);
+    background: var(--neutral);
 }
 
 .exp-item {
@@ -477,7 +477,7 @@ h1 {
 /* --- ABOUT SECTION --- */
 .about-section {
     padding: 120px 0;
-    background-color: var(--neutral);
+    background-color: var(--bg);
 }
 
 .about-grid {
