@@ -605,6 +605,59 @@ footer h2 {
     letter-spacing: 1px;
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav {
+        display: none !important;
+    }
+    .hero {
+        padding: 120px 0 80px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 3.8rem;
+    }
+    .hero-description {
+        margin: 0 auto;
+    }
+    .project-split-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .project-display-side {
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+    .project-display-card {
+        min-height: auto;
+    }
+    .design-track-viewport {
+        width: 100%;
+        overflow: hidden;
+        clip-path: none;
+    }
+    .design-slide {
+        min-width: 100%;
+        width: 100%;
+        padding-right: 0;
+    }
+    .sub-nav-container,
+    .design-description-box {
+        width: 100%;
+        padding: 0 10px;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .about-image img {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+
 /* 8. MOBILE VIEW TRANSFORMATION */
 @media (max-width: 768px) {
     /* 1. Simplify Nav: Hide all menu links and toggles */
