@@ -200,3 +200,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateProjectDisplay(0);
 });
+
+let currentVideoIndex = 0;
+
+function changeVideoSlide(direction) {
+    const track = document.querySelector('.video-carousel-track');
+    const slides = document.querySelectorAll('.video-slide');
+    const viewport = document.querySelector('.video-carousel-viewport');
+
+    if (!track || !slides.length || !viewport) return;
+
+    currentVideoIndex = (currentVideoIndex + direction + slides.length) % slides.length;
+    const offset = viewport.clientWidth * currentVideoIndex;
+    track.style.transform = `translateX(-${offset}px)`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    changeVideoSlide(0);
+});
+
+window.addEventListener('resize', () => {
+    changeVideoSlide(0);
+});

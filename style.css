@@ -289,20 +289,35 @@ h1 {
 }
 
 .video-showcase-section {
-    padding: 40px 0 100px;
-    background-color: var(--bg);
+    padding: 100px 0;
+    background-color: var(--neutral);
 }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+.video-carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.video-carousel-viewport {
+    width: min(100%, 760px);
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.video-carousel-track {
+    display: flex;
+    transition: transform 0.45s ease;
+}
+
+.video-slide {
+    min-width: 100%;
 }
 
 .video-card {
     background: #fff;
     border: 1px solid #E0DCD4;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(40, 34, 29, 0.04);
 }
@@ -330,6 +345,13 @@ h1 {
     font-size: 0.9rem;
     color: #5F564E;
     line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .video-carousel-viewport {
+        width: 100%;
+    }
 }
 
 .design-section-header {
@@ -489,7 +511,7 @@ h1 {
 /* 6. EXPERIENCE SECTION */
 .exp-section {
     padding: 100px 0;
-    background: var(--neutral);
+    background: var(--bg);
 }
 
 .exp-item {
