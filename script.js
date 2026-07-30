@@ -132,51 +132,71 @@ const projectData = [
         date: "OCT 2025 — FEB 2026",
         role: "UX RESEARCHER • UX DESIGNER",
         desc: "A VR simulation designed to build empathy and raise awareness for dementia care through immersive storytelling and system-based interaction.",
-        tags: ["Unity", "XR Interaction", "C#"]
+        tags: ["Unity", "XR Interaction", "C#"],
+        videoUrl: "https://youtu.be/eSC1RdFEhbE?si=BKW51ytlvnyNqmXh"
     },
     {
         title: "Kiasu Kouriers",
         date: "MAY 2025 — JUN 2025",
         role: "LEAD DEVELOPER • UX RESEARCHER",
         desc: "A gamified approach to road safety education built in Unity, teaching students traffic laws through active delivery simulation.",
-        tags: ["Unity 3D", "UX/UI", "Game Design"]
+        tags: ["Unity 3D", "UX/UI", "Game Design"],
+        videoUrl: "https://youtu.be/iTMngpRfqFw?si=0fSdEvorr8jtgWDu"
     },
     {
         title: "Musli Travels",
         date: "OCT 2024 — FEB 2025",
         role: "LEADER • PROGRAMMER • 3D MODELLER",
         desc: "A travel website for users to shop for travel packages and essentials.",
-        tags: ["3D Modelling", "HTML Programming", "CSS Programming"]
+        tags: ["3D Modelling", "HTML Programming", "CSS Programming"],
+        videoUrl: "https://youtu.be/PUU_UkabQ4U?si=Yaw7JZ4arsphDJsS"
     }
 ];
 
+function updateProjectDisplay(index) {
+    const data = projectData[index];
+    if (!data) return;
+
+    document.getElementById('proj-display-title').textContent = data.title;
+    document.getElementById('proj-display-date').textContent = data.date;
+    document.getElementById('proj-display-role').textContent = data.role;
+    document.getElementById('proj-display-desc').textContent = data.desc;
+
+    const tagsContainer = document.getElementById('proj-display-tags');
+    tagsContainer.innerHTML = '';
+    data.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.textContent = tag;
+        tagsContainer.appendChild(span);
+    });
+
+    const videoFrame = document.getElementById('proj-video');
+    if (videoFrame) {
+        videoFrame.src = data.videoUrl || '';
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const rows = document.querySelectorAll('.project-list-row');
-    
+
     rows.forEach(row => {
-        // Triggers instantly on mouse hover or tap touch
-        row.addEventListener('mouseenter', () => {
-            // Remove active style marker from previous rows
+        const activateProject = () => {
             rows.forEach(r => r.classList.remove('active'));
             row.classList.add('active');
-            
+
             const index = parseInt(row.getAttribute('data-project'));
-            const data = projectData[index];
-            
-            // Seamlessly inject target text values
-            document.getElementById('proj-display-title').textContent = data.title;
-            document.getElementById('proj-display-date').textContent = data.date;
-            document.getElementById('proj-display-role').textContent = data.role;
-            document.getElementById('proj-display-desc').textContent = data.desc;
-            
-            // Redraw tag pills dynamically
-            const tagsContainer = document.getElementById('proj-display-tags');
-            tagsContainer.innerHTML = '';
-            data.tags.forEach(tag => {
-                const span = document.createElement('span');
-                span.textContent = tag;
-                tagsContainer.appendChild(span);
-            });
+            updateProjectDisplay(index);
+        };
+
+        row.addEventListener('mouseenter', activateProject);
+        row.addEventListener('click', activateProject);
+        row.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                activateProject();
+            }
         });
     });
+
+    updateProjectDisplay(0);
 });
