@@ -133,7 +133,7 @@ const projectData = [
         role: "UX RESEARCHER • UX DESIGNER",
         desc: "A VR simulation designed to build empathy and raise awareness for dementia care through immersive storytelling and system-based interaction.",
         tags: ["Unity", "XR Interaction", "C#"],
-        videoUrl: "https://youtu.be/eSC1RdFEhbE?si=BKW51ytlvnyNqmXh"
+        videoUrl: "https://www.youtube.com/embed/eSC1RdFEhbE?si=mKGWZkNr37uJwQCi"
     },
     {
         title: "Kiasu Kouriers",
@@ -141,7 +141,7 @@ const projectData = [
         role: "LEAD DEVELOPER • UX RESEARCHER",
         desc: "A gamified approach to road safety education built in Unity, teaching students traffic laws through active delivery simulation.",
         tags: ["Unity 3D", "UX/UI", "Game Design"],
-        videoUrl: "https://youtu.be/iTMngpRfqFw?si=0fSdEvorr8jtgWDu"
+        videoUrl: "https://www.youtube.com/embed/iTMngpRfqFw?si=6UnsCsWlL5dfl5Rd"
     },
     {
         title: "Musli Travels",
@@ -149,7 +149,7 @@ const projectData = [
         role: "LEADER • PROGRAMMER • 3D MODELLER",
         desc: "A travel website for users to shop for travel packages and essentials.",
         tags: ["3D Modelling", "HTML Programming", "CSS Programming"],
-        videoUrl: "https://youtu.be/PUU_UkabQ4U?si=Yaw7JZ4arsphDJsS"
+        videoUrl: "https://www.youtube.com/embed/PUU_UkabQ4U?si=Pp3GVEysgqNsGbGn" 
     }
 ];
 
